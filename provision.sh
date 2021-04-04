@@ -28,4 +28,13 @@ sudo docker run -it --rm \
 
 # cron files must be owned by root
 sudo chown root:root *.sh
-sudo ln -sf "$(pwd)/run.sh" /etc/cron.weekly/borgman
+
+# sudo ln -sf "$(pwd)/run.sh" /etc/cron.weekly/borgman
+# or, running at a specific time:
+echo "run sudo crontab -e"
+echo "it should look like:"
+echo << EOF
+j@troy:~/borgman2$ sudo crontab -l
+# m h  dom mon dow   command
+0 9 * * 3 XDG_CONFIG_HOME=/home/j/.config /home/j/borgman2/run.sh 2>&1 >> /home/j/borglogs
+EOF
