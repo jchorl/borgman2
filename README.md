@@ -15,16 +15,7 @@ RCLONE_B2_KEY=<key>
 ./provision.sh
 ```
 
-Now we can remove the creds from the rclone config because we use env vars.
-```shell
-j@troy:~/borgman2$ sudo vim ~/.config/rclone/rclone.conf
-j@troy:~/borgman2$ sudo cat ~/.config/rclone/rclone.conf
-[remote]
-type = b2
-hard_delete = true
-```
-
-Provisioning borg is not repeatable and should be done manually
+If provisioning borg for the first time:
 
 ```shell
 export BORG_REPO=/mnt/backup

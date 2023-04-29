@@ -39,7 +39,7 @@ sudo docker run --rm                      \
     -e BORG_PASSPHRASE="$BORG_PASSPHRASE" \
     jchorl/borg                           \
     prune                                 \
-    --prefix 'data-'                      \
+    --glob-archives 'data-*'              \
     --show-rc                             \
     --keep-daily    1                     \
     --keep-weekly   2                     \
