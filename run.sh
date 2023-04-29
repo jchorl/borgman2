@@ -25,7 +25,7 @@ sudo docker run --rm                      \
     create                                \
     --stats                               \
     --show-rc                             \
-    --compression lz4                     \
+    --compression zstd                    \
     --exclude-caches                      \
     ::'data-{now}'                        \
     "$DATA_DIR"
